@@ -1,0 +1,13 @@
+
+
+// this code is for map using map with flutter to get list item as per need 
+Eg.
+
+
+  ...currentQuestions.answers.map(
+              (answer) {
+                return AnswerButton(ans: answer, checkAns: () {});
+              },
+            ),
+            
+            
