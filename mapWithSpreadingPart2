@@ -1,0 +1,80 @@
+Full Code
+
+import 'package:flutter/material.dart';
+import 'package:quiz_advance/answer_button.dart';
+import 'package:quiz_advance/data/questions.dart';
+
+// this is screen 2
+
+class Questions extends StatefulWidget {
+  const Questions({super.key});
+
+  @override
+  State<Questions> createState() {
+    return _QuestionsState();
+  }
+}
+
+class _QuestionsState extends State<Questions> {
+  @override
+  Widget build(BuildContext context) {
+    final currentQuestions = questions[0];
+
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+            colors: [Colors.blueAccent, Colors.amberAccent],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight),
+      ),
+      child: SizedBox(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              currentQuestions.text,
+              style: const TextStyle(color: Colors.white, fontSize: 22),
+            ),
+
+            /*
+            
+            NOTE :- 
+            Here down this note              
+            
+
+            currentQuestions.answers.map(
+              (answer) {
+                return AnswerButton(ans: answer, checkAns: () {});
+              },
+            ),
+
+            Basically in this code  dart will return a list but
+            here we are in column and column wants a widget not a list
+            so basically we need to use spread operator
+            ...
+             and after that code looks like
+             
+              '...currentQuestions.answers.map(
+              (answer) {
+                return AnswerButton(ans: answer, checkAns: () {});
+              },
+            ),
+
+            SO NOW BY USING THE SPREAD OPERATOR WE WILL GET DIFFERENT ANSWERBUTTONS
+            AS IT WILL BE CONVERTED TO INDIVIDUAL WIDGETS
+            
+
+            */
+            const SizedBox(height: 30),
+            ...currentQuestions.answers.map(
+              (answer) {
+                return AnswerButton(ans: answer, checkAns: () {});
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
