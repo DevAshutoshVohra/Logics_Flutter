@@ -1,0 +1,57 @@
+void main() {
+
+  // Doing Maps
+  
+  const even=[2,4,6,8];
+  
+  const odd =[1,3,5,7,9];
+  
+  print(' Maps Example ');
+  
+  
+var  evenDoubled = even.map( (no){
+    
+    return no*2;
+  } );
+  
+  
+  print(evenDoubled);
+
+  
+  
+  
+    
+    var  oddDoubled = odd.map( (no){
+    
+return no;  } );
+  
+  
+  print(oddDoubled);
+  
+  
+  // Now Doing Spread Operator
+  const list1=[1,2,3];
+  const list2=[4,5,6];
+  
+  const list3=[...list1, ...list2];
+  
+  
+  
+  
+  
+
+  
+  
+  print("Using Spread Operator !!");
+  
+  print(" List 1          $list1 ");
+    print(" List 2          $list2 ");
+
+    print(" Now Spreaded List i.e. List 3  ");
+
+  print(" List 3          $list3 ");
+  
+  
+  return ;
+
+}
